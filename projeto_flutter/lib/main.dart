@@ -5,10 +5,10 @@ import 'package:app_flutter/telas/perfil_page.dart';
 import 'package:app_flutter/telas/painel_adm.dart';
 
 void main() {
-  runApp(MinhaApp());
+  runApp(MyApp());
 }
 
-class MinhaApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

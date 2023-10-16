@@ -34,7 +34,7 @@ class _EstadoPaginaDeLogin extends State<PaginaDeLogin> {
               Container(
                 margin: EdgeInsets.only(bottom: 100.0, top: 30.0),
                 child: Image.asset(
-                  'assets/logo.png',
+                  'assets/img/logotipo_6ddrones.jpg',
                   width: 100.0,
                   height: 100.0,
                 ),
