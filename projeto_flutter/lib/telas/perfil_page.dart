@@ -18,57 +18,50 @@ class PaginaPerfil extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                // Adicione a ação desejada para a seta voltar aqui
-              },
-            ),
-            Text(
-              "Seu Perfil",
-              style: TextStyle(fontSize: 20),
-            ),
-            PopupMenuButton(
-              itemBuilder: (BuildContext context) {
-                return [
-                  PopupMenuItem(
-                    child: Row(
-                      children: [
-                        IconTheme(
-                          data: IconThemeData(color: Colors.black),
-                          child: Icon(Icons.edit),
-                        ),
-                        SizedBox(width: 8),
-                        Text("Editar"),
-                      ],
-                    ),
-                    value: "editar",
-                  ),
-                  PopupMenuItem(
-                    child: Row(
-                      children: [
-                        Icon(Icons.exit_to_app, color: Colors.red),
-                        SizedBox(width: 8),
-                        Text("Sair", style: TextStyle(color: Colors.red)),
-                      ],
-                    ),
-                    value: "sair",
-                  ),
-                ];
-              },
-              onSelected: (value) {
-                if (value == "editar") {
-                  // função de editar
-                } else if (value == "sair") {
-                  // função de sair
-                }
-              },
-            ),
-          ],
+        automaticallyImplyLeading: true, // Ação de voltar
+        title: Text(
+          "Seu Perfil",
+          style: TextStyle(fontSize: 20),
         ),
+        centerTitle: true, // Centraliza o título
+        actions: [
+          PopupMenuButton(
+            itemBuilder: (BuildContext context) {
+              return [
+                PopupMenuItem(
+                  child: Row(
+                    children: [
+                      IconTheme(
+                        data: IconThemeData(color: Colors.black),
+                        child: Icon(Icons.edit),
+                      ),
+                      SizedBox(width: 8),
+                      Text("Editar"),
+                    ],
+                  ),
+                  value: "editar",
+                ),
+                PopupMenuItem(
+                  child: Row(
+                    children: [
+                      Icon(Icons.exit_to_app, color: Colors.red),
+                      SizedBox(width: 8),
+                      Text("Sair", style: TextStyle(color: Colors.red)),
+                    ],
+                  ),
+                  value: "sair",
+                ),
+              ];
+            },
+            onSelected: (value) {
+              if (value == "editar") {
+                // função de editar
+              } else if (value == "sair") {
+                // função de sair
+              }
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Column(

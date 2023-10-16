@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MinhaApp());
+  runApp(VisualizarOrganizacao());
 }
 
-class MinhaApp extends StatelessWidget {
+class VisualizarOrganizacao extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: PainelOrganizacao(),
-    );
-  }
-}
-
-class PainelOrganizacao extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
-      )
+        title: Text("Visualizar Organização"),
+      ),
+      body: Center(
+        child: Text("Conteúdo da página Visualizar Organização"),
+      ),
     );
   }
 }

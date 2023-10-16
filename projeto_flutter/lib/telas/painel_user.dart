@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MinhaApp());
+  runApp(VisualizarUsuario());
 }
 
-class MinhaApp extends StatelessWidget {
+class VisualizarUsuario extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: PainelProjetos(),
-    );
-  }
-}
-
-class PainelProjetos extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
-      )
+        title: Text("Visualizar Usuário"),
+      ),
+      body: Center(
+        child: Text("Conteúdo da página Visualizar Usuário"),
+      ),
     );
   }
 }

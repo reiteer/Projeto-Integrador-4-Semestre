@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:app_flutter/telas/painel_user.dart';
+import 'package:app_flutter/telas/painel_organizacao.dart';
+import 'package:app_flutter/telas/painel_projetos.dart';
 
 void main() {
   runApp(MinhaApp());
@@ -18,18 +21,16 @@ class PanelAdm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: true,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                // Adicione a ação desejada para a seta voltar aqui
-              },
-            ),
-            Text(
-              "Administrador",
-              style: TextStyle(fontSize: 20),
+            Expanded(
+              child: Center(
+                child: Text(
+                  "Administrador",
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
             ),
             PopupMenuButton(
               itemBuilder: (BuildContext context) {
@@ -75,66 +76,51 @@ class PanelAdm extends StatelessWidget {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => VisualizarUsuario()));
               },
-              child: Text("Visualizar Usuário"),
+              child: Container(
+                width: 350,
+                height: 100,
+                child: Center(
+                  child: Text(
+                    "Visualizar Usuário",
+                    style: TextStyle(fontSize: 24),
+                  ),
+                ),
+              ),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 32),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => VisualizarOrganizacao()));
               },
-              child: Text("Visualizar Organização"),
+              child: Container(
+                width: 350,
+                height: 100,
+                child: Center(
+                  child: Text(
+                    "Visualizar Organização",
+                    style: TextStyle(fontSize: 24),
+                  ),
+                ),
+              ),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 32),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => VisualizarProjetos()));
               },
-              child: Text("Visualizar Projetos"),
+              child: Container(
+                width: 350,
+                height: 100,
+                child: Center(
+                  child: Text(
+                    "Visualizar Projetos",
+                    style: TextStyle(fontSize: 24),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class VisualizarUsuario extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Visualizar Usuário"),
-      ),
-      body: Center(
-        child: Text("Conteúdo da página Visualizar Usuário"),
-      ),
-    );
-  }
-}
-
-class VisualizarOrganizacao extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Visualizar Organização"),
-      ),
-      body: Center(
-        child: Text("Conteúdo da página Visualizar Organização"),
-      ),
-    );
-  }
-}
-
-class VisualizarProjetos extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Visualizar Projetos"),
-      ),
-      body: Center(
-        child: Text("Conteúdo da página Visualizar Projetos"),
       ),
     );
   }
