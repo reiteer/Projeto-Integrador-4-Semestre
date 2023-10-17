@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app_flutter/telas/login_page.dart';
 
 void main() {
   runApp(MinhaApp());
@@ -18,12 +19,12 @@ class PaginaPerfil extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: true, // Ação de voltar
+        automaticallyImplyLeading: true,
         title: Text(
           "Seu Perfil",
           style: TextStyle(fontSize: 20),
         ),
-        centerTitle: true, // Centraliza o título
+        centerTitle: true,
         actions: [
           PopupMenuButton(
             itemBuilder: (BuildContext context) {
@@ -57,7 +58,7 @@ class PaginaPerfil extends StatelessWidget {
               if (value == "editar") {
                 // função de editar
               } else if (value == "sair") {
-                // função de sair
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PaginaDeLogin()));
               }
             },
           ),

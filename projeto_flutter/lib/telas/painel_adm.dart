@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:app_flutter/telas/login_page.dart';
+import 'package:app_flutter/telas/perfil_page.dart';
 import 'package:app_flutter/telas/painel_user.dart';
 import 'package:app_flutter/telas/painel_organizacao.dart';
 import 'package:app_flutter/telas/painel_projetos.dart';
@@ -21,7 +23,7 @@ class PanelAdm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: true,
+        automaticallyImplyLeading: false,
         title: Row(
           children: <Widget>[
             Expanded(
@@ -58,10 +60,10 @@ class PanelAdm extends StatelessWidget {
                 ];
               },
               onSelected: (value) {
-                if (value == "editar") {
-                  // função de editar
+                if (value == "perfil") {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => PaginaPerfil()));
                 } else if (value == "sair") {
-                  // função de sair
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => PaginaDeLogin()));
                 }
               },
             ),

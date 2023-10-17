@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:app_flutter/telas/login_page.dart';
+import 'package:app_flutter/telas/perfil_page.dart';
 
 void main() {
   runApp(MinhaApp());
@@ -70,9 +72,9 @@ class OrganizacaoPage extends StatelessWidget {
               },
               onSelected: (value) {
                 if (value == "perfil") {
-                  // Ação para abrir o perfil
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => PaginaPerfil()));
                 } else if (value == "sair") {
-                  // Ação para sair
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => PaginaDeLogin()));
                 }
               },
             ),
